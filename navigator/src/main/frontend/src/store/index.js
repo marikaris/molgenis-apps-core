@@ -1,17 +1,20 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-
-import state from './state'
-import mutations from './mutations'
-import getters from './getters'
-import actions from './actions'
+import VueResource from 'vue-resource'
+import navigator from './modules/navigator'
+import explorer from './modules/explorer'
+import report from './modules/report'
 
 Vue.use(Vuex)
+Vue.use(VueResource)
+
+const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
-  state,
-  mutations,
-  actions,
-  getters,
-  strict: true
+  modules: {
+    navigator,
+    explorer,
+    report
+  },
+  strict: debug
 })
