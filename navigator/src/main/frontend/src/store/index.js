@@ -1,17 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import state from './state'
 import mutations from './mutations'
-import getters from './getters'
 import actions from './actions'
 
 Vue.use(Vuex)
 
+// https://vuex.vuejs.org/en/getting-started.html
 export default new Vuex.Store({
-  state,
-  mutations,
-  actions,
-  getters,
+  state: {
+    token: undefined,
+    package_: undefined
+  },
+  mutations: mutations,
+  actions: actions,
   strict: true
 })

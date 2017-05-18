@@ -1,6 +1,6 @@
 import 'es6-promise/auto'
 import Vue from 'vue'
-import MgApp from './MgApp'
+import App from './App'
 import { sync } from 'vuex-router-sync'
 import store from './store'
 import router from './router'
@@ -20,6 +20,6 @@ new Vue({
   el: '#app',
   store,
   router,
-  template: '<MgApp />',
-  components: { MgApp }
+  template: '<App />',
+  components: { App }
 })
