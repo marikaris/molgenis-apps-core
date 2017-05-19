@@ -6,7 +6,7 @@
       <div class="col-4 offset-4">
         <div class="input-group">
           <input type="text" class="form-control" placeholder="Search"
-                 @input="onSearchQueryChange($event.target.value)" :value="search">
+                 @input="onSearchQueryChange($event.target.value)" value="search">
           <span class="input-group-addon"><i class="fa fa-search"></i></span>
         </div>
       </div>
@@ -53,6 +53,9 @@
       },
       updatePackage: function () {
         this.$store.dispatch('getPackage_', this.$route.params.packageId)
+      },
+      onSearchQueryChange (value) {
+        console.log(value)
       }
     },
     created () {
